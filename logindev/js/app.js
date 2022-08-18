@@ -1,13 +1,16 @@
-var btnSignin = document.querySelector("#signin");
-var btnSignup = document.querySelector("#signup");
+function logar(){
 
-var body = document.querySelector("body");
+    var email = document.getElementById('email').value;
+    var password = document.getElementById('password').value;
+
+    if(email == "joao123@gmail.com" && password == "1234"){
+        alert('LOGIN REALIZADO COM SUCESSO!');
+        location.href = "home.html";
+    }
+    else{
+        alert('USUÁRIO INCORRETO!');
+    }
+    }
 
 
-btnSignin.addEventListener("click", function () {
-   body.className = "sign-in-js"; 
-});
 
-btnSignup.addEventListener("click", function () {
-    body.className = "sign-up-js";
-})
