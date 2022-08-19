@@ -5,6 +5,49 @@
     padding: 0;
     box-sizing: border-box;
 }
+:root{
+    --container-bg: #ecf0f1;
+    --content-bg: #ffff;
+    --content-before-bg: blueviolet;
+    --title-primary-color: white;
+    --title-second-color: blueviolet;
+    --description-primary-color: white;
+    --description-second-color: #7f8c8d;
+    --btn-color: white;
+    --btn-primary-bg: transparent;
+    --btn-primary-border: 1px solid white;
+    --btn-primary-hover-bg: white;
+    --btn-primary-hover-color: blueviolet;
+    --btn-second-bg: blueviolet;
+    --btn-second-border: 1px solid blueviolet;
+    --btn-second-hover-bg: white;
+    --btn-second-hover-border: 1px solid blueviolet;
+    --btn-second-hover-color: blueviolet;
+    --link-social-media-hover-bg: blueviolet; 
+    --link-social-media-hover-border: blueviolet;
+}
+.dark-mode:root{
+    --container-bg: rgba(0, 0, 0, 0.589);
+    --content-bg: black;
+    --content-before-bg: rgb(56, 4, 104);
+    --title-primary-color: white;
+    --title-second-color: white;
+    --description-primary-color: white;
+    --description-second-color: white;
+    --btn-color: rgb(56, 4, 104);
+    --btn-primary-bg: white;
+    --btn-primary-border: 1px solid white;
+    --btn-primary-hover-bg: rgb(56, 4, 104);
+    --btn-primary-hover-color: white;
+    --btn-second-bg: white;
+    --btn-second-border: 1px solid blueviolet;
+    --btn-second-hover-bg: rgb(56, 4, 104);
+    --btn-second-hover-border: 1px solid blueviolet;
+    --btn-second-hover-color: white;
+    --link-social-media-hover-bg: rgb(75, 10, 136);
+    --link-social-media-hover-border: rgb(56, 4, 104);
+}
+
 body {
     font-family: 'Open Sans', sans-serif;
 }
@@ -14,10 +57,10 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #ecf0f1;
+    background-color: var(--container-bg);
 }
 .content{
-    background-color: white;
+    background-color: var(--content-bg);
     border-radius: 15px;
     width: 960px;
     height: 50%;
@@ -29,7 +72,7 @@ body {
 .content::before{
     content: "";
     position: absolute;
-    background-color: blueviolet;
+    background-color: var(--content-before-bg);
     width: 40%;
     height: 100%;
     border-top-left-radius: 15px;
@@ -41,10 +84,10 @@ body {
     text-transform: capitalize;
 }
 .title-primary{
-    color: white;
+    color: var(--title-primary-color);
 }
 .title-second{
-    color: blueviolet;
+    color: var(--title-second-color);
 }
 .description{
     font-size: 14px;
@@ -52,15 +95,15 @@ body {
     line-height: 30px;
 }
 .description-primary{
-    color: white;
+    color: var(--description-primary-color);
 }
 .description-second{
-    color: #7f8c8d;
+    color: var(--description-second-color);
 }
 .btn{
     border-radius: 15px;
     text-transform: uppercase;
-    color: white;
+    color: var(--btn-color);
     font-size: 10px;
     padding: 10px 50px;
     font-weight: bold;
@@ -68,23 +111,24 @@ body {
     align-self: center;
     border-width: 0px;
     margin-top: 1rem;
+    cursor: pointer;
 }
 .btn-primary{
-    background-color: transparent;
-    border: 1px solid white;
+    background-color: var(--btn-primary-bg);
+    border: var(--btn-primary-border);
 }
 .btn-primary:hover{
-    background-color: white;
-    color:blueviolet;
+    background-color: var(--btn-primary-hover-bg);
+    color: var(--btn-primary-hover-color);
 }
 .btn-second{
-    background-color: blueviolet;
-    border: 1px solid blueviolet;
+    background-color: var(--btn-second-bg);
+    border: var(--btn-second-border);
 }
 .btn-second:hover{
-    background-color: white;
-    border: 1px solid blueviolet;
-    color: blueviolet;
+    background-color: var(--btn-second-hover-bg);
+    border: var(--btn-second-hover-border);
+    color: var(--btn-second-hover-color);
 }
 .first-content{
     display: flex;
@@ -107,9 +151,9 @@ body {
     margin-left: 10px;
 }
 .link-social-media:hover .item-social-media{
-    background-color: blueviolet;
+    background-color: var(--link-social-media-hover-bg);
     color: white;
-    border-color: blueviolet;
+    border-color: var(--link-social-media-hover-border);
 }
 .list-social-media{
     display: flex;
@@ -138,6 +182,7 @@ body {
     width: 100%;
 }
 .label-input {
+    border-radius: 15px;
     background-color: #ecf0f1;
     display: flex;
     align-items: center;
@@ -150,4 +195,34 @@ body {
 .second-content{
     position: absolute;
     display: none;
+}
+input[type="checkbox"]{
+    width: 50px;
+    height: 20px;
+    appearance: none;
+    background-color: #ecf0f1;
+    border-radius: 50px;
+    box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0,0.24);
+    cursor: pointer;
+    transition: .4s;
+    position: relative;
+}
+input:checked[type="checkbox"]{
+    background-color: rgb(56, 4, 104);
+}
+input[type="checkbox"]:before{
+    content: '';
+    width: 20px;
+    height: 20px;
+    background-color: rgba(175, 175, 175, 0.856);
+    border-radius: 50px;
+    position: absolute;
+    box-shadow: 0px, 4px, 8px, 1px, rgba(0, 0, 0,0.24);
+    transform: scale(1.1);
+    top: 0;
+    left: 0;
+    transition: .4s;
+}
+input:checked[type="checkbox"]:before{
+    left: 30px;
 }
